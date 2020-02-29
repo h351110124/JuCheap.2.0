@@ -1,0 +1,139 @@
+﻿@using System.Text
+@using JuCheap.Service.Dto
+@using JuCheap.Service.Enum
+@model GongziDto
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Areas/Adm/Views/Shared/_Layout_Body.cshtml";
+    List<GongziDto> parentMenus = ViewBag.ParentMenu;
+}
+@section StylesBefore{
+    @Styles.Render("~/Template/Admin/jucheap/Css/SelectStyle")
+}
+
+@section Scripts{
+    <script>$("#submitForm").validate({
+            submitHandler: jucheap.buttonLoading,
+            rules: {
+                xingming: {
+                    required: true,
+                    minlength: 2,
+                    maxlength: 20
+                }
+            },
+            messages: {
+                xingming: {
+                    required: "请输入姓名",
+                    minlength: "最小长度为2个字符",
+                    maxlength: "最大长度为20个字符"
+                }
+            }
+        });</script>
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                添加工资条
+            </header>
+            <div class="panel-body">
+                <div class="form">
+                    <form class="cmxform form-horizontal tasi-form" id="submitForm" method="POST" action="@Request.Url.PathAndQuery" novalidate="novalidate">
+                        @Html.HiddenFor(item => item.Id, new { @class = "form-control" })
+                        <div class="form-group ">
+                            @Html.LabelFor(item => item.month, new { @class = "control-label col-lg-2" })
+                            <div class="col-lg-10">
+                                @Html.TextBoxFor(item => item.month, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            @Html.LabelFor(item => item.xingming, new { @class = "control-label col-lg-2" })
+                            <div class="col-lg-10">
+                                @Html.TextBoxFor(item => item.xingming, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            @Html.LabelFor(item => item.jcgz, new { @class = "control-label col-lg-2" })
+                            <div class="col-lg-10">
+                                @Html.TextBoxFor(item => item.jcgz, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            @Html.LabelFor(item => item.jxgz, new { @class = "control-label col-lg-2" })
+                            <div class="col-lg-10">
+                                @Html.TextBoxFor(item => item.jxgz, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            @Html.LabelFor(item => item.slgz, new { @class = "control-label col-lg-2" })
+                            <div class="col-lg-10">
+                                @Html.TextBoxFor(item => item.slgz, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            @Html.LabelFor(item => item.btgz, new { @class = "control-label col-lg-2" })
+                            <div class="col-lg-10">
+                                @Html.TextBoxFor(item => item.btgz, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            @Html.LabelFor(item => item.bfgz, new { @class = "control-label col-lg-2" })
+                            <div class="col-lg-10">
+                                @Html.TextBoxFor(item => item.bfgz, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            @Html.LabelFor(item => item.jiangjin, new { @class = "control-label col-lg-2" })
+                            <div class="col-lg-10">
+                                @Html.TextBoxFor(item => item.jiangjin, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            @Html.LabelFor(item => item.kqkk, new { @class = "control-label col-lg-2" })
+                            <div class="col-lg-10">
+                                @Html.TextBoxFor(item => item.kqkk, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            @Html.LabelFor(item => item.otherkk, new { @class = "control-label col-lg-2" })
+                            <div class="col-lg-10">
+                                @Html.TextBoxFor(item => item.otherkk, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            @Html.LabelFor(item => item.yingfagz, new { @class = "control-label col-lg-2" })
+                            <div class="col-lg-10">
+                                @Html.TextBoxFor(item => item.yingfagz, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            @Html.LabelFor(item => item.shifagz, new { @class = "control-label col-lg-2" })
+                            <div class="col-lg-10">
+                                @Html.TextBoxFor(item => item.shifagz, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button class="btn btn-success" type="submit">保存</button>
+                                <button class="btn btn-default" type="button" onclick="jucheap.goback(this)">返回</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

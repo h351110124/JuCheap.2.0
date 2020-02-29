@@ -1,0 +1,41 @@
+﻿@using System.Text
+@using JuCheap.Service.Dto
+@{
+    Layout = "/Areas/Adm/Views/Shared/_Layout_Body.cshtml";
+}
+@section StylesBefore{
+    @Styles.Render("~/Template/Admin/jucheap/Css/DataTable")
+}
+@{
+    ViewBag.Title = "公告";
+}
+@section Scripts{
+    @Scripts.Render("~/JS/Admin/jucheap/DataTable")
+    <script>
+        $(function () {
+            var url = '@Url.Action("GetList",@ViewContext.RouteData.Values)';
+            $.ajax({
+                    url: url,
+                    type: 'get',
+                    data: '',
+                    dataType: 'json',
+                    contentType: 'application/json',
+                success: function (res) {
+                    debugger
+                    if (res != null) {
+                        $("#gonggao").text(res.Title);
+                        $("#neirong").html(res.Remark);
+                    }
+                    }
+                });
+        });
+    </script>
+}
+
+<div id="gonggao">
+
+</div>
+<div id="neirong">
+
+</div>
+
