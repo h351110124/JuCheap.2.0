@@ -12,12 +12,12 @@ namespace JuCheap.Data.Config
         public GonggaoConfig()
         {
             ToTable("gonggao");
-            Property(item => item.Xuhao).HasColumnType("int").IsRequired();
-            Property(item => item.Title).HasColumnType("nvarchar").IsRequired().HasMaxLength(30);
-            Property(item => item.Status).HasColumnType("nvarchar").IsRequired().HasMaxLength(10);
-            Property(item => item.Remark).HasColumnType("ntext").IsRequired();
-            Property(item => item.Uptime).HasColumnType("datetime").IsRequired();
-            Property(item => item.leibie).HasColumnType("nvarchar").IsRequired().HasMaxLength(30);
+            Property(item => item.Xuhao).HasColumnType("int");
+            Property(item => item.Title).HasColumnType("nvarchar").HasMaxLength(30);
+            Property(item => item.Status).HasColumnType("nvarchar").HasMaxLength(10);
+            Property(item => item.Remark).HasColumnType("ntext");
+            Property(item => item.Uptime).HasColumnType("datetime");
+            Property(item => item.leibie).HasColumnType("nvarchar").HasMaxLength(30);
         }
     }
 }

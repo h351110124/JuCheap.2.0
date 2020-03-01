@@ -199,7 +199,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\ico\apple-touch-icon-114-precomposed.png" />
     <Content Include="Images\ico\apple-touch-icon-144-precomposed.png" />
@@ -236,6 +242,12 @@
     <Content Include="Images\v2\user.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Template\Admin\jucheap\css\Abel.css" />
     <Content Include="Template\Admin\jucheap\css\bootstrap-reset.css" />
     <Content Include="Template\Admin\jucheap\css\bootstrap-touchspin.css" />
@@ -657,6 +669,7 @@
     <Compile Include="Areas\Adm\Controllers\PageViewController.cs" />
     <Compile Include="Areas\Adm\Controllers\RoleController.cs" />
     <Compile Include="Areas\Adm\Controllers\UserController.cs" />
+    <Compile Include="Controllers\ButtonController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filter\AuthFilter.cs" />
@@ -734,6 +747,10 @@
     <Content Include="Areas\Adm\Views\Gongzi\AddGongzi.cshtml" />
     <Content Include="Areas\Adm\Views\Car\Car.cshtml" />
     <Content Include="Areas\Adm\Views\Car\AddCar.cshtml" />
+    <Content Include="Areas\Adm\Views\Car\EditCar.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="job_scheduling_data_2_0.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -800,6 +817,10 @@
     <Content Include="Template\Admin\jucheap\fonts\toadOcfmlt9b38dHJxOBGJCDkYQxybH_Rl7Qv7ee2N4.woff2" />
     <Content Include="Template\Admin\jucheap\fonts\toadOcfmlt9b38dHJxOBGLpVETArfVi9McBbsQ4atuQ.woff2" />
     <Content Include="Template\Admin\jucheap\fonts\toadOcfmlt9b38dHJxOBGOode0-EuMkY--TSyExeINg.woff2" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Button\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

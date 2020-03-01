@@ -12,8 +12,9 @@ namespace JuCheap.Web.Areas.Adm.Controllers
     public class CarController : AdmBaseController
     {
         // GET: Adm/Car
-        public ActionResult Car()
+        public ActionResult Car(string moudleId, string menuId, string btnId)
         {
+            GetButtons(menuId);
             return View();
         }
 
