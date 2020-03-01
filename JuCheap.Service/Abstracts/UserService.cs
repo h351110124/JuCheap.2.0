@@ -210,5 +210,55 @@ namespace JuCheap.Service.Abstracts
                 return dto;
             }
         }
+
+        public Result<UserDto> Yanzheng(string user)
+        {
+            var res = new Result<UserDto>();
+            try
+            {
+                var User = GetOne(item => item.User == user);
+                if (User == null)
+                {
+                    res.msg = "无效的用户";
+                }
+                else
+                {
+                    res.flag = true;
+                    res.msg = "登录成功";
+                    res.data = User;
+
+                    //写入注册信息
+                    DateTime expiration = true
+                        ? DateTime.Now.AddDays(7)
+                        : DateTime.Now.Add(FormsAuthentication.Timeout);
+                    FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(2,
+                        User.User,
+                        DateTime.Now,
+                        expiration,
+                        true,
+                        User.Id.ToString(),
+                        FormsAuthentication.FormsCookiePath);
+
+                    HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName,
+                        FormsAuthentication.Encrypt(ticket))
+                    {
+                        HttpOnly = true,
+                        Expires = expiration
+                    };
+
+#if !DEBUG
+                cookie.Domain = FormsAuthentication.CookieDomain;
+#endif
+
+                    HttpContext.Current.Response.Cookies.Add(cookie);
+                }
+            }
+            catch (Exception ex)
+            {
+                res.msg = ex.Message;
+                Logger.Log(ex.Message, ex);
+            }
+            return res;
+        }
     }
 }

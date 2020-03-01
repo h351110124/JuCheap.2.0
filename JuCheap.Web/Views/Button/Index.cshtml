@@ -1,19 +1,21 @@
-﻿@{
+﻿@using System.Web.Optimization
+@{
     Layout = null;
 }
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    @Styles.Render("~/css/front/web/home")
 </head>
 <body>
-    <div>
-        <div>
-            <a class="btn-slide animation animated-item-3" href="@Url.Action("Login", "User", new { Area = "Adm" })">更多</a>
+    <div style="display:flex;padding-left:37%;padding-top:20%">
+        <div style="text-align:center;padding-right:25%">
+            <a type="button" style="font-size:26px!important" class="btn btn-success m-b-10" href="@Url.Action("Login", "User", new { Area = "Adm" })">订餐系统</a>
         </div>
 
-        <div>
-            <a class="btn-slide animation animated-item-3" href="@Url.Action("Login", "User", new { Area = "Adm" })">更多</a>
+        <div style="text-align:center">
+            <a type="button" style="font-size:26px!important" class="btn btn-success m-b-10" href="@Url.Action("Indexs", "Control", new { Area = "Adm" })?user=jucheap1&reportType=right">OA系统</a>
         </div>
     </div>
 </body>

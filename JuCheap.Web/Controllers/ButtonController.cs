@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace JuCheap.Web.Controllers
 {
+    [AllowAnonymous]
     public class ButtonController : Controller
     {
         // GET: Button

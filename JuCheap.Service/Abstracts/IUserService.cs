@@ -23,6 +23,8 @@ namespace JuCheap.Service.Abstracts
         /// <returns></returns>
         Result<UserDto> Login(UserDto dto);
 
+        Result<UserDto> Yanzheng(string user);
+
         /// <summary>
         /// 用户退出
         /// </summary>
